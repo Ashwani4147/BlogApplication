@@ -141,19 +141,19 @@ app.post('/login',async (req,res)=>{
         res.json(postDoc);
     })
 
-    // app.delete('/delete/:id', async(req,res)=>{
-    //   const {id}=req.params;
-    //     try{
-    //       let post =  await Post.findByIdAndDelete(id);
+    app.delete('/delete/:id', async(req,res)=>{
+      const {id}=req.params;
+        try{
+          let post =  await Post.findByIdAndDelete(id);
 
-    //       if(!post) return res.json({msg: 'hello'});
-    //       return res.json({msg: 'No'});
-    //     }catch(err){
-    //       return res.json({msg: err});
-    //     }
+          if(!post) return res.json({msg: 'hello'});
+          return res.json({msg: 'No'});
+        }catch(err){
+          return res.json({msg: err});
+        }
         
       
-    // })
+    })
 
    
 
